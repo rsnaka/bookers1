@@ -1,0 +1,77 @@
+<h1>Books</h1>
+<%= form_with model: @Book, url: '/books', method: :destroy do  |f| %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  <tr>
+    <th>リーダブルコード</th>
+    <th>より良いコードを書くためのシンプルで実践的なテクニック</th>
+    <th><%= link_to "Show",books_path %></th>
+    <th><%= link_to "Edit",books_path %></th>
+    <th><%= link_to "Destroy",books_path %></th>
+  <tr>
+    <th>トラブル知らずのシステム設計</th>
+    <th>システム設計の要点を図解で説明してくれます</th>
+    <th><%= link_to "Show",books_path %></th>
+    <th><%= link_to "Edit",books_path %></th>
+    <th><%= link_to "Destroy",books_path %></th>
+  </tr>
+  <tr>
+    <th>たのしいRuby</th>
+    <th>Rubyの入門におすすめです</th>
+    <th><%= link_to "Show",books_path %></th>
+    <th><%= link_to "Edit",books_path %></th>
+    <th><%= link_to "Destroy",books_path %></th>
+  </tr>
+  <tr>
+    <th>入門Git</th>
+    <th>gitについての基本操作から内部構造まで解説してくれます</th>
+    <th><%= link_to "Show",books_path %></th>
+    <th><%= link_to "Edit",books_path %></th>
+    <th><%= link_to "Destroy",books_path %></th>
+  </tr>
+  <tr>
+    <th>アルゴリズム図鑑</th>
+    <th>アルゴリズムについてカラーイラストでしっかり解説してくれます</th>
+    <th><%= link_to "Show",books_path %></th>
+    <th><%= link_to "Edit",books_path %></th>
+    <th><%= link_to "Destroy",books_path %></th>
+  </tr>
+  <tr>
+    <th>達人プログラマー</th>
+    <th>プログラマ入門者は必読！</th>
+    <th><%= link_to "Show",books_path %></th>
+    <th><%= link_to "Edit",books_path %></th>
+    <th><%= link_to "Destroy",books_path %></th>
+  </tr>
+  <tr>
+    <th>データベース実践入門</th>
+    <th>効率的なSQL文を教えてくれます</th>
+    <th><%= link_to "Show",books_path %></th>
+    <th><%= link_to "Edit",books_path %></th>
+    <th><%= link_to "Destroy",books_path %></th>
+  </tr>
+  <tr>
+    <th>test</th>
+    <th>test</th>
+  </tr>
+<table>
+<%= link_to "Destroy", destroy_book_path(@book.id), method: :delete, "date-confirm" => "Are you sure?" %>
+<% end %>
+
+<h2>New book</h2>
+<%= form_with model: @Book, url: '/books', method: :post do  |f| %>
+  <p>
+    Title<br>
+   <%= f.text_field :title %>
+  </p>
+
+  <p>
+    Body<br>
+    <%= f.text_area :body %>
+  </p>
+  <p><%= f.submit 'Create Book' %></p>
+
+<% end %>
