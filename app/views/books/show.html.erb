@@ -1,8 +1,10 @@
 
+
 <h5>Title:</h5>
+<%= @book.title %>
 <h5>Body:</h5>
+<%= @book.body %>
 
 <p>
-  <%= link_to "Edit",root_path %> |
-  <%= link_to "Back",root_path %>
+<%= link_to "Edit",edit_book_path(@book) %> | <%= link_to "Back",books_path %>
 </p>
